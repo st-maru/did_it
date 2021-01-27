@@ -1,0 +1,25 @@
+.left-box {
+  color: #ffffff;
+  width: 20%;
+  min-width: 350px;
+  height: 100%;
+  background-color: #13334c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-menu {
+  margin: 20px;
+}
+
+.left-menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.left-menu a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}

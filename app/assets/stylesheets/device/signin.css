@@ -1,0 +1,23 @@
+.sign-in-wrapper {
+  background-color: #F8F1F1;
+  color: #333333;
+  height: calc(100vh - 70px - 35px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  margin-top: 20px;
+}
+
+.sign-in-btn {
+  text-align: center;
+  margin-top: 20px;
+}
