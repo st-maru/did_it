@@ -1,0 +1,48 @@
+
+.content {
+  width: 500px;
+  padding: 0.5em 1em;
+  margin: 1.5em;
+  color: #232323;
+  background: #fff8e8;
+  border-left: solid 10px #ffc06e;
+}
+.content p {
+  margin: 0; 
+  padding: 0;
+}
+
+.content-add {
+  margin-bottom: 1.5em;
+}
+
+.working-day {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.main-title {
+  padding-top: 50px;
+}
+
+.main-memo {
+  margin-bottom: 20px;
+}
+
+.contents-list {
+  height: 50%;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.mypage-footer {
+  text-align: center;
+  margin: 50px;
+}
+
+.main-box-after {
+  height: 20px;
+}

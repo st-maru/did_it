@@ -1,0 +1,48 @@
+.mypage-wrapper {
+  color: #333333;
+  width: 100vw;
+  height: 100vh;
+  background-color: #F8F1F1;
+  display: flex;
+}
+
+.main-box {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.main-header {
+  margin-bottom: 20px;
+}
+
+.main-title {
+  width: 500px;
+  text-align: center;
+  font-size: 2em;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+.task-lists {
+  height: 50%;
+}
+
+.task {
+  margin: 1.5em 0;
+}
+
+.list-btn, .add-btn {
+  width: 500px;
+}
+
+.list-none {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5em;
+}

@@ -1,0 +1,33 @@
+.top-header {
+  height: 70px;
+  background-color: #13334c;
+  display: flex;
+  justify-content: space-between;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-left {
+  font-size: 40px;
+  margin: auto 0;
+  padding-left: 50px;
+}
+
+.header-right {
+  display: flex;
+  font-size: 20px;
+  margin: auto 0;
+  padding-right: 50px;
+}
+
+.header-sign-in {
+  margin-right: 30px;
+}
