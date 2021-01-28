@@ -1,0 +1,43 @@
+<div class="mypage-wrapper">
+  <%= render "shared/left-box"%>
+  <div class="main-box">
+    <div class="main-title">
+      <%= @category.name %>
+    </div>
+    <div class="main-memo">
+      <%= @category.item %>
+    </div>
+    <div class="content-add">
+      <%= link_to "dekita!を追加する", new_post_content_path(@post.id), class: "btn btn-success add-btn" %>
+    </div>
+
+    <div class="contents-list">
+      <% if @content.present? %>
+        <% working_day = "" %>
+        <% @content.each do |content| %>
+          <% if working_day != content.working_day %>
+              <div class="working-day"><%= content.working_day %></div>
+              <div class="content">
+                <p>取り組んだこと: <%= content.text %></p>
+                <p>開始時間: <%= content.start_time.strftime('%H:%M') %></p>
+                <p>終了時間: <%= content.ending_time.strftime('%H:%M') %></p>
+                <p>作業時間: <%= ((content.ending_time - content.start_time)/60).to_i %>分
+              </div>
+              <% working_day = content.working_day %>
+            <% else %>
+              <div class="content">
+                <p>取り組んだこと: <%= content.text %></p>
+                <p>開始時間: <%= content.start_time.strftime('%H:%M') %></p>
+                <p>終了時間: <%= content.ending_time.strftime('%H:%M') %></p>
+                <p>作業時間: <%= ((content.ending_time - content.start_time)/60).to_i %>分
+              </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div class="list-none">dekita!がありません</div>
+      <% end %>
+      <%= paginate @completions %>
+      <div class="main-box-after"></div>
+    </div>
+  </div>
+</div>

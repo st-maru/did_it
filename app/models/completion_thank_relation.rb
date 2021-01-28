@@ -1,0 +1,2 @@
+class CompletionThankRelation < ApplicationRecord
+end

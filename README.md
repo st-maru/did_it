@@ -14,7 +14,7 @@
 ### Association
 
 - has_many :tasks
-- has_many :contents
+- has_many :categories
 - has_many :completions
 
 ## tasks テーブル
@@ -27,10 +27,10 @@
 
 ### Association
 
-- has_many :contents
+- has_many :categories
 - belongs_to :user
 
-## contents テーブル
+## categories テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -43,6 +43,7 @@
 
 - belongs_to :user
 - belongs_to :task
+- has_many :completions
 
 ## completions テーブル
 
@@ -54,12 +55,12 @@
 | start_time   | time       | null: false                    |
 | ending_time  | time       | null: false                    |
 | user         | references | null: false, foreign_key: true |
-| content      | references | null: false, foreign_key: true |
+| category     | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :content
+- belongs_to :category
 - has_many :thanks, through: completion_thank_relations
 
 ## completion_thank_relations テーブル
