@@ -1,0 +1,28 @@
+<div class="mypage-wrapper">
+<%= render "shared/left-box"%>
+  <div class="main-box">
+   <div class="main-header">
+    <div class="main-title">
+      <%= @user.name + "のタスク一覧" %>
+    </div>
+    <div class="task-add">
+      <%= link_to "タスクを追加する", new_task_path, class: "btn btn-success add-btn" %>
+    </div>
+   </div>
+      <div class="task-lists">
+      
+      <% if @task.present? %>
+        <% @task.each do |task| %>
+        <div class="task">
+          <%= link_to task.name, task_categories_path(task.id), class:"btn btn-info list-btn" %>
+        </div>
+        <% end %>
+      <% else %>
+        <div class="list-none">タスクがありません</div>
+      <% end %>
+      <%= paginate @task %>
+      <div class="main-box-after"></div>
+    </div>
+
+  </div>
+</div>
