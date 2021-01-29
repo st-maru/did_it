@@ -45,8 +45,10 @@
 
 - belongs_to :user
 - belongs_to :task
-- has_many :thanks, through: completion_thank_relations
-- has_many :tags, through: completion_tag_relations
+- has_many :completion_thank_relations
+- has_many :thanks, through: :completion_thank_relations
+- has_many :completion_tag_relations
+- has_many :tags, through: :completion_tag_relations
 
 ## completion_thank_relations テーブル
 
@@ -69,7 +71,8 @@
 
 ### Association
 
-- has_many :completions, through: completion_thank_relations
+- has_many :completion_thank_relations
+- has_many :completions, through: :completion_thank_relations
 - belongs_to :user
 
 ## completion_tag_relations テーブル
@@ -91,5 +94,5 @@
 | name         | string     | null: false, foreign_key: true |
 
 ### Association
-
-- has_many :completions, through: completion_tag_relations
+- has_many :completion_tag_relations
+- has_many :completions, through: :completion_tag_relations

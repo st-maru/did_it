@@ -1,7 +1,6 @@
 class Tag < ApplicationRecord
   validates :name, presence: true
 
-  belongs_to :user
-  belongs_to :task
-  has_many :completions
+  has_many :completion_tag_relations
+  has_many :completions, through: :completion_tag_relations
 end
