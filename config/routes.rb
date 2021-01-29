@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :tasks, only: [:show, :new, :create] do
     resources :categories, only: [:index, :new, :create] do
-      resources :completions, only: :index
+      resources :completions, only: [:index, :new, :create]
     end
   end
 end

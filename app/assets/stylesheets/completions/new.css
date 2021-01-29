@@ -1,0 +1,8 @@
+.start_time, .ending_time {
+  float: left;
+  padding-bottom: 9px;
+}
+
+.time {
+  margin: 0 15px;
+}

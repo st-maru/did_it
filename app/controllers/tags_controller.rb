@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class TagsController < ApplicationController
   def index
     @task = Task.find(params[:task_id])
     @categories = @task.categories.order(id: "DESC").page(params[:page]).per(5)
