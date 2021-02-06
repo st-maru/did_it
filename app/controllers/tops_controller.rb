@@ -6,6 +6,6 @@ class TopsController < ApplicationController
 
   private
   def move_to_tasks
-    redirect_to task_path(current_user.id) if user_signed_in?
+    redirect_to tasks_path if user_signed_in?
   end
 end

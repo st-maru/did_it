@@ -50,6 +50,28 @@
 - has_many :completion_tag_relations
 - has_many :tags, through: :completion_tag_relations
 
+## completion_tag_relations テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| completion   | references | null: false, foreign_key: true |
+| tag          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :completion
+- belongs_to :tag
+
+## tags テーブル
+
+| Column       | Type       | Options     |
+| ------------ | ---------- | ----------- |
+| name         | string     | null: false |
+
+### Association
+- has_many :completion_tag_relations
+- has_many :completions, through: :completion_tag_relations
+
 ## completion_thank_relations テーブル
 
 | Column     | Type       | Options                        |
@@ -74,25 +96,3 @@
 - has_many :completion_thank_relations
 - has_many :completions, through: :completion_thank_relations
 - belongs_to :user
-
-## completion_tag_relations テーブル
-
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| completion   | references | null: false, foreign_key: true |
-| tag          | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :completion
-- belongs_to :tag
-
-## tags テーブル
-
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| name         | string     | null: false, foreign_key: true |
-
-### Association
-- has_many :completion_tag_relations
-- has_many :completions, through: :completion_tag_relations

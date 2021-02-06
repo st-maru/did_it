@@ -1,9 +1,10 @@
 <div class="post-content">
   <%= render "shared/left-box"%>
   <div class="post-box">
-    <div class="page-title">タスクの新規作成</div>
 
-    <%= form_with model: @task, local: true do |f|%>
+    <%= form_with model: @task, class:"task-form", local: true do |f|%>
+
+    <div class="page-title">タスクの新規作成</div>
 
      <%= render 'shared/error_messages', model: f.object %>
 

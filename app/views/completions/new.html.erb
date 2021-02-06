@@ -1,10 +1,11 @@
 <div class="post-content">
   <%= render "shared/left-box"%>
   <div class="post-box">
-    <div class="page-title">dekita!の新規作成</div>
-    <%= "カテゴリー: " + @category.name %>
 
-    <%= form_with model: [@task, @category, @completion], local: true do |f|%>
+    <%= form_with model: [@task, @completion], url: task_completions_path, class:"completions-form", local: true do |f|%>
+
+    <div class="page-title">dekita!の新規作成</div>
+    <%= "タスク: " + @task.name %>
 
      <%= render 'shared/error_messages', model: f.object %>
 
@@ -14,8 +15,18 @@
     </div>
 
     <div class="field">
+      <%= f.label :name, "タグ" %><br />
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :human, "支えになった人" %><br />
+      <%= f.text_field :human, class:"form-control" %>
+    </div>
+
+    <div class="field">
       <%= f.label :memo, "メモ" %><br />
-      <%= f.text_field :memo, class:"form-control" %>
+      <%= f.text_area :memo, class:"form-control" %>
     </div>
 
     <div class="field">
@@ -23,21 +34,14 @@
       <%= f.date_field :working_day, class: "form_text form-control" %>
     </div>
 
-    <div class="form-inline">
     <div class="field">
       <%= f.label :start_time, "開始時刻", class:"start_time" %><br />
       <%= f.time_field :start_time, class: "form_text form-control" %>
-      <span class="time">〜</span>
+
     </div>
     <div class="field">
       <%= f.label :ending_time, "終了時刻", class:"ending_time"%><br />
       <%= f.time_field :ending_time, class: "form_text form-control" %>
-    </div>
-    </div>
-
-    <div class="field">
-      <%= f.label :thank_ids, "助けになった人" %><br />
-      <%= f.collection_select :thank_ids, @thank, :id, :human, {prompt: "選択して下さい"}, {class: "form-control"} %> 
     </div>
 
 
@@ -45,6 +49,5 @@
       <%= f.submit "作成する", class: "btn btn-primary"  %>
     </div>
     <% end %>
-
   </div>
 </div>

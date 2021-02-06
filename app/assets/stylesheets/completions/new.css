@@ -1,8 +1,16 @@
-.start_time, .ending_time {
-  float: left;
-  padding-bottom: 9px;
+.completions-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.time {
-  margin: 0 15px;
+.completions-form::before {
+  content: "";
+  height: 10vh;
+}
+
+.completions-form::after {
+  content: "";
+  height: 10vh;
 }
