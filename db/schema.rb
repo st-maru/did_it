@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_065222) do
+ActiveRecord::Schema.define(version: 2021_01_29_075304) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "item", null: false
-    t.bigint "user_id"
-    t.bigint "task_id"
+  create_table "completion_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "completion_id"
+    t.bigint "tag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["task_id"], name: "index_categories_on_task_id"
-    t.index ["user_id"], name: "index_categories_on_user_id"
+    t.index ["completion_id"], name: "index_completion_tag_relations_on_completion_id"
+    t.index ["tag_id"], name: "index_completion_tag_relations_on_tag_id"
   end
 
   create_table "completion_thank_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -39,11 +37,17 @@ ActiveRecord::Schema.define(version: 2021_01_29_065222) do
     t.time "start_time", null: false
     t.time "ending_time", null: false
     t.bigint "user_id"
-    t.bigint "category_id"
+    t.bigint "task_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_completions_on_category_id"
+    t.index ["task_id"], name: "index_completions_on_task_id"
     t.index ["user_id"], name: "index_completions_on_user_id"
+  end
+
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -57,8 +61,10 @@ ActiveRecord::Schema.define(version: 2021_01_29_065222) do
 
   create_table "thanks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "human", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_thanks_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,11 +81,12 @@ ActiveRecord::Schema.define(version: 2021_01_29_065222) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "tasks"
-  add_foreign_key "categories", "users"
+  add_foreign_key "completion_tag_relations", "completions"
+  add_foreign_key "completion_tag_relations", "tags"
   add_foreign_key "completion_thank_relations", "completions"
   add_foreign_key "completion_thank_relations", "thanks"
-  add_foreign_key "completions", "categories"
+  add_foreign_key "completions", "tasks"
   add_foreign_key "completions", "users"
   add_foreign_key "tasks", "users"
+  add_foreign_key "thanks", "users"
 end

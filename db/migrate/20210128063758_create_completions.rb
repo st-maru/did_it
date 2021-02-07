@@ -7,7 +7,7 @@ class CreateCompletions < ActiveRecord::Migration[6.0]
       t.time :start_time, null: false
       t.time :ending_time, null: false
       t.references :user, foreign_key: true
-      t.references :category, foreign_key: true
+      t.references :task, foreign_key: true
       t.timestamps
     end
   end

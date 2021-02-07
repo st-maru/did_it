@@ -1,20 +1,21 @@
 <div class="post-content">
   <%= render "shared/left-box"%>
   <div class="post-box">
-    <div class="page-title">タスクの新規作成</div>
 
-    <%= form_with model: @task, local: true do |f|%>
+    <%= form_with model: @task, class:"task-form", local: true do |f|%>
+
+    <div class="page-title">タスクの新規作成</div>
 
      <%= render 'shared/error_messages', model: f.object %>
 
     <div class="field">
       <%= f.label :name, "タスク名" %><br />
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class:"form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :goal, "目標" %><br />
-      <%= f.text_area :goal, class: "form_text" %>
+      <%= f.text_area :goal, class: "form_text form-control" %>
     </div>
 
     <div class="actions  form_btn">
