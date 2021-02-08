@@ -6,11 +6,11 @@ class CompletionsController < ApplicationController
 
   def new
     @task = Task.find(params[:task_id])
-    @completion = CompletionTag.new
+    @completion = CompletionTagThank.new
   end
 
   def create
-    @completion = CompletionTag.new(completion_params)
+    @completion = CompletionTagThank.new(completion_params)
     if @completion.valid?
       @completion.save
       redirect_to task_completions_path(params[:task_id])
@@ -22,6 +22,6 @@ class CompletionsController < ApplicationController
 
   private
   def completion_params
-    params.require(:completion_tag).permit(:summary, :memo, :working_day, :start_time, :ending_time, :name).merge(user_id: current_user.id, task_id: params[:task_id])
+    params.require(:completion_tag_thank).permit(:summary, :memo, :working_day, :start_time, :ending_time, :name, :human).merge(user_id: current_user.id, task_id: params[:task_id])
   end
 end
