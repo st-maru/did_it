@@ -1,6 +1,8 @@
 .top-header {
   height: 70px;
+  width: 100%;
   background-color: #13334c;
+  position: fixed;
   display: flex;
   justify-content: space-between;
 }
@@ -28,6 +30,6 @@ header a:hover {
   padding-right: 50px;
 }
 
-.header-sign-in {
+.header-sign-in, .header-tasks, .header-user-information {
   margin-right: 30px;
 }

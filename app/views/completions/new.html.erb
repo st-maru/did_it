@@ -1,5 +1,6 @@
+<div class="container-field">
+<%= render "shared/header"%>
 <div class="post-content">
-  <%= render "shared/left-box"%>
   <div class="post-box">
 
     <%= form_with model: [@task, @completion], url: task_completions_path, class:"completions-form", local: true do |f|%>
@@ -50,4 +51,6 @@
     </div>
     <% end %>
   </div>
+</div>
+  <%= render "shared/footer"%>
 </div>
