@@ -1,3 +1,27 @@
+.completion-box {
+  color: #333333;
+  width: 100%;
+  background-color: #F8F1F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.completion-title {
+  width: 25%;
+  text-align: center;
+  font-size: 2em;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.completion-memo {
+  margin-bottom: 20px;
+}
 
 .content {
   width: 500px;
@@ -7,6 +31,7 @@
   background: #fff8e8;
   border-left: solid 10px #ffc06e;
 }
+
 .content p {
   margin: 0; 
   padding: 0;
@@ -30,19 +55,7 @@
   margin-bottom: 20px;
 }
 
-.contents-list {
-  height: 50%;
-}
-
 .pagination {
   justify-content: center;
 }
 
-.mypage-footer {
-  text-align: center;
-  margin: 50px;
-}
-
-.main-box-after {
-  height: 20px;
-}

@@ -1,52 +1,48 @@
 <div class="container-field">
-<%= render "shared/header"%>
-<div class="mypage-wrapper">
-  <div class="main-box">
-    <div class="main-title">
-      <%= @task.name %>
+    <div class="mypage-wrapper">
+              <div class="completion-box">
+                  <div class="completion-title">
+                    <%= @task.name %>
+                  </div>
+                   <div class="completion-memo">
+                     <%= @task.goal %>
+                   </div>
+                   <div class="content-add">
+                     <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
+                   </div>
+                    <div class="contents-list">
+                      <% if @completions.present? %>
+                         <% working_day = "" %>
+                         <% @completions.each do |completion| %>
+                          <% completion.tags.each do |tag| %>
+                             <% if working_day != completion.working_day %>
+                                 <div class="working-day"><%= completion.working_day %></div>
+                                 <div class="content">
+                                  <p>取り組んだこと: <%= completion.summary %></p>
+                                  <p>タグ: <%= tag.name %></p>
+                                  <p> メモ: <%= completion.memo %></p>
+                                  <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
+                                  <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
+                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                 </div>
+                                 <% working_day = completion.working_day %>
+                               <% else %>
+                                 <div class="content">
+                                  <p>取り組んだこと: <%= completion.summary %></p>
+                                  <p>タグ: <%= tag.name %></p>
+                                  <p> メモ: <%= completion.memo %></p>
+                                  <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
+                                  <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
+                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                 </div>
+                            <% end %>
+                           <% end %>
+                         <% end %>
+                      <% else %>
+                        <div class="list-none">dekita!がありません</div>
+                      <% end %>
+                    <%= paginate @completions %>
+                  </div>
+              </div>
     </div>
-    <div class="main-memo">
-      <%= @task.goal %>
-    </div>
-    <div class="content-add">
-      <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
-    </div>
-
-    <div class="contents-list">
-      <% if @completions.present? %>
-        <% working_day = "" %>
-        <% @completions.each do |completion| %>
-          <% completion.tags.each do |tag| %>
-            <% if working_day != completion.working_day %>
-                <div class="working-day"><%= completion.working_day %></div>
-                <div class="content">
-                  <p>取り組んだこと: <%= completion.summary %></p>
-                  <p>タグ: <%= tag.name %></p>
-                  <p> メモ: <%= completion.memo %></p>
-                  <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
-                  <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
-                </div>
-                <% working_day = completion.working_day %>
-              <% else %>
-                <div class="content">
-                  <p>取り組んだこと: <%= completion.summary %></p>
-                  <p>タグ: <%= tag.name %></p>
-                  <p> メモ: <%= completion.memo %></p>
-                  <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
-                  <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
-                </div>
-            <% end %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <div class="list-none">dekita!がありません</div>
-      <% end %>
-      <%= paginate @completions %>
-      <div class="main-box-after"></div>
-    </div>
-  </div>
-</div>
-<%= render "shared/footer"%>
 </div>

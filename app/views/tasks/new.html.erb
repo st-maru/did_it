@@ -1,6 +1,5 @@
 <div class="container-field">
     <div class="mypage-wrapper">
-        <%= render "shared/header"%>
             <div class="task-post-box">
                <%= form_with model: @task, class:"task-form", local: true do |f|%>
                   <div class="new-task-title">タスクの新規作成</div>
@@ -18,6 +17,5 @@
                   </div>
                <% end %>
             </div>
-        <%= render "shared/footer"%>
     </div>
 </div>
