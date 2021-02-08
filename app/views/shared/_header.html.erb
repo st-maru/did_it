@@ -5,11 +5,23 @@
     </div>
   </div>
   <div class="header-right">
+    <% if user_signed_in? %>
+    <div class="header-tasks">
+      <%= link_to "タスク一覧", tasks_path %>
+    </div>
+      <div class="header-user-information">
+     <%= link_to "ユーザー情報", user_path(current_user.id) %>
+    </div>
+    <div class="header-sign-out">
+     <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+    </div>
+    <% else %>
     <div class="header-sign-in">
       <%= link_to 'ログイン', new_user_session_path %>
     </div>
     <div class="header-sign-up">
       <%= link_to '新規登録', new_user_registration_path %>
     </div>
+    <% end %>
   </div>
 </header>
