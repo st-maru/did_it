@@ -1,7 +1,7 @@
 <div class="container-field">
     <div class="mypage-wrapper">
         <div class="completion-edit-box">
-            <%= form_with model: [@task, @completion], url: task_completions_path, class:"completions-form", local: true do |f|%>
+            <%= form_with model: [@task, @completion_tag_thank], class:"completions-form", local: true do |f|%>
 
             <div class="edit-completion-title">dekita!の新規作成</div>
             <%= "タスク: " + @task.name %>

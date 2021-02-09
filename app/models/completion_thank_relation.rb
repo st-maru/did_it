@@ -1,4 +1,4 @@
 class CompletionThankRelation < ApplicationRecord
   belongs_to :completion
-  belongs_to :thank, dependent: :destroy
+  belongs_to :thank
 end
