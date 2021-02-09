@@ -9,7 +9,7 @@
                    </div>
                   <div class="task-user"> 
                   <p>作成者：<%= link_to @task.user.name, "#", class:"user-link" %>
-                  <%= link_to "#", class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
+                  <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
                   <%= link_to "#", class:"task-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                   </p>
                   </div>

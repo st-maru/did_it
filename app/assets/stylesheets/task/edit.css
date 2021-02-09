@@ -1,0 +1,29 @@
+.task-edit-box {
+  color: #333333;
+  background-color: #F8F1F1;
+  width: 100%;
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.task-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-task-title {
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.form_btn {
+  margin-top: 20px;
+  text-align: center;
+}
