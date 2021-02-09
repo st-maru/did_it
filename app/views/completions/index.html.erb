@@ -31,6 +31,9 @@
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
                                   <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                  <%= link_to "#", method: :delete, class:"completion-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
+                                  <%= link_to "#", class:"completion-edit" do %> <i class="fas fa-edit"></i> <% end %>
+                                  </p>
                                  </div>
                                  <% working_day = completion.working_day %>
                                <% else %>
@@ -41,7 +44,7 @@
                                   <p> メモ: <%= completion.memo %></p>
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分</p>
                                  </div>
                             <% end %>
                            <% end %>
