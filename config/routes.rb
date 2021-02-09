@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'tops/index'
   root to: "tops#index"
   resources :users, only: :show
-  resources :tasks, only: [:index, :new, :create] do
+  resources :tasks, only: [:index, :new, :create, :edit, :update] do
     resources :completions, only: [:index, :new, :create]
   end
 end

@@ -1,4 +1,4 @@
-.completion-post-box {
+.task-edit-box {
   color: #333333;
   background-color: #F8F1F1;
   width: 100%;
@@ -7,7 +7,7 @@
   padding-bottom: 10vh;
 }
 
-.completions-form {
+.task-form {
   height: 100%;
   width: 100%;
   display: flex;
@@ -16,10 +16,14 @@
   flex-direction: column;
 }
 
-.new-completion-title {
+.edit-task-title {
   text-align: center;
   font-size: 2em;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
 
+.form_btn {
+  margin-top: 20px;
+  text-align: center;
+}

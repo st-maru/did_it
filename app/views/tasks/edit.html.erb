@@ -1,0 +1,21 @@
+<div class="container-field">
+    <div class="mypage-wrapper">
+         <div class="task-edit-box">
+           <%= form_with model: @task, class:"task-form", local: true do |f|%>
+              <div class="edit-task-title">タスクの変更</div>
+                <%= render 'shared/error_messages', model: f.object %>
+              <div class="field">
+                <%= f.label :name, "タスク名" %><br />
+                <%= f.text_field :name, class:"form-control" %>
+              </div>
+               <div class="field">
+                 <%= f.label :goal, "目標" %><br />
+                 <%= f.text_area :goal, class: "form_text form-control" %>
+               </div>
+               <div class="actions  form_btn">
+                <%= f.submit "変更する", class: "btn btn-primary"  %>
+              </div>
+            <% end %>
+         </div>
+    </div>
+</div>
