@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   validates :name, presence: true
 
-  has_many :completions
+  has_many :completions, dependent: :destroy
   belongs_to :user
 end
