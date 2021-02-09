@@ -20,6 +20,11 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:task_id])
+    @completion = Completion.find(params[:id])
+  end
+
   private
   def completion_params
     params.require(:completion_tag_thank).permit(:summary, :memo, :working_day, :start_time, :ending_time, :name, :human).merge(user_id: current_user.id, task_id: params[:task_id])

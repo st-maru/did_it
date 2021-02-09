@@ -1,0 +1,23 @@
+.completion-edit-box {
+  color: #333333;
+  background-color: #F8F1F1;
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.completions-form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edit-completion-title {
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}

@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "tops#index"
   resources :users, only: :show
   resources :tasks, only: [:index, :new, :create, :edit, :update, :destroy] do
-    resources :completions, only: [:index, :new, :create]
+    resources :completions, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end
