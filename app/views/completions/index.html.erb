@@ -7,6 +7,12 @@
                    <div class="completion-memo">
                      <%= @task.goal %>
                    </div>
+                  <div class="task-user"> 
+                  <p>作成者：<%= link_to @task.user.name, "#", class:"user-link" %>
+                  <%= link_to "#", class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
+                  <%= link_to "#", class:"task-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
+                  </p>
+                  </div>
                    <div class="content-add">
                      <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
                    </div>

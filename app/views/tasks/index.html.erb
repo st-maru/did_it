@@ -12,7 +12,7 @@
                     <% if @task.present? %>
                         <% @task.each do |task| %>
                           <div class="task">
-                            <%= link_to task.name, task_completions_path(task.id), class:"btn btn-info list-btn" %>
+                             <%= link_to task.name, task_completions_path(task.id), class:"btn btn-info list-btn" %>
                           </div>
                         <% end %>
                     <% else %>
