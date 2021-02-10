@@ -3,7 +3,7 @@
         <div class="completion-edit-box">
             <%= form_with model: [@task, @completion_tag_thank], class:"completions-form", local: true do |f|%>
 
-            <div class="edit-completion-title">dekita!の新規作成</div>
+            <div class="edit-completion-title">dekita!の編集</div>
             <%= "タスク: " + @task.name %>
 
             <%= render 'shared/error_messages', model: f.object %>
@@ -45,7 +45,7 @@
 
 
             <div class="actions  form_btn">
-              <%= f.submit "作成する", class: "btn btn-primary"  %>
+              <%= f.submit "更新する", class: "btn btn-primary"  %>
             </div>
             <% end %>
         </div>

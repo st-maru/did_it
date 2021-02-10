@@ -11,10 +11,7 @@ class CompletionsController < ApplicationController
 
   def create
     @completion_tag_thank = CompletionTagThank.new(completion_params)
-    tag_list = params[:completion][:name].split(",")
-    thank_list = params[:completion][:human].split(",")
-    if @completion_tag_thank.valid?
-      @completion_tag_thank.save(tag_list, thank_list)
+    if @completion_tag_thank.save
       redirect_to task_completions_path(params[:task_id])
     else
       @task = Task.find(params[:task_id])
@@ -31,16 +28,20 @@ class CompletionsController < ApplicationController
   def update
     @completion = Completion.find(params[:id])
     @completion_tag_thank = CompletionTagThank.new(completion_params, completion: @completion)
-    tag_list = params[:completion][:name].split(",")
-    thank_list = params[:completion][:human].split(",")
-     if @completion_tag_thank.valid?
-       @completion_tag_thank.save(tag_list, thank_list)
+     if @completion_tag_thank.save
        redirect_to task_completions_path(params[:task_id])
      else
        @task = Task.find(params[:task_id])
        render :edit
      end
    end
+
+   def destroy
+    @completion = Completion.find(params[:id])
+    if @completion.destroy
+      redirect_to task_completions_path(params[:task_id])
+    end
+  end
 
   private
   def completion_params
