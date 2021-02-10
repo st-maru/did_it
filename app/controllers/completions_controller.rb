@@ -6,13 +6,12 @@ class CompletionsController < ApplicationController
 
   def new
     @task = Task.find(params[:task_id])
-    @completion = CompletionTagThank.new
+    @completion_tag_thank = CompletionTagThank.new
   end
 
   def create
-    @completion = CompletionTagThank.new(completion_params)
-    if @completion.valid?
-      @completion.save
+    @completion_tag_thank = CompletionTagThank.new(completion_params)
+    if @completion_tag_thank.save
       redirect_to task_completions_path(params[:task_id])
     else
       @task = Task.find(params[:task_id])
@@ -20,8 +19,32 @@ class CompletionsController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:task_id])
+    @completion = Completion.find(params[:id])
+    @completion_tag_thank = CompletionTagThank.new(completion: @completion)
+  end
+
+  def update
+    @completion = Completion.find(params[:id])
+    @completion_tag_thank = CompletionTagThank.new(completion_params, completion: @completion)
+     if @completion_tag_thank.save
+       redirect_to task_completions_path(params[:task_id])
+     else
+       @task = Task.find(params[:task_id])
+       render :edit
+     end
+   end
+
+   def destroy
+    @completion = Completion.find(params[:id])
+    if @completion.destroy
+      redirect_to task_completions_path(params[:task_id])
+    end
+  end
+
   private
   def completion_params
-    params.require(:completion_tag_thank).permit(:summary, :memo, :working_day, :start_time, :ending_time, :name, :human).merge(user_id: current_user.id, task_id: params[:task_id])
+    params.require(:completion).permit(:summary, :memo, :working_day, :start_time, :ending_time, :name, :human).merge(user_id: current_user.id, task_id: params[:task_id])
   end
 end

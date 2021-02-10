@@ -1,4 +1,4 @@
-.completion-post-box {
+.completion-edit-box {
   color: #333333;
   background-color: #F8F1F1;
   height: 100%;
@@ -15,10 +15,9 @@
   flex-direction: column;
 }
 
-.new-completion-title {
+.edit-completion-title {
   text-align: center;
   font-size: 2em;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
-
