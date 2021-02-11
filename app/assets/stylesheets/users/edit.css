@@ -1,0 +1,31 @@
+.account-edit-wrapper {
+  background-color: #F8F1F1;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-edit-box {
+  height: 100%;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.field {
+  margin-top: 20px;
+}
+
+.account-edit-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.user-delete-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.user-image {
+  text-align: center;
+}
