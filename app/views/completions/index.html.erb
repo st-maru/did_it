@@ -32,7 +32,12 @@
                                   <p> メモ: <%= completion.memo %></p>
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                                  <p>作業時間: <span class="working_time_count"><%= ((completion.ending_time - completion.start_time)/60).to_i %></span>分
+                                  <% if (completion.ending_time - completion.start_time)/60 < 0 %>
+                                      <% working_time = ((completion.ending_time - completion.start_time)/60) + 1440 %>
+                                  <% else %>
+                                      <% working_time = ((completion.ending_time - completion.start_time)/60) %>
+                                  <% end %>
+                                  <p>作業時間: <span class="working_time_count"><%= working_time.to_i %></span>分
                                   <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                                   <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i class="fas fa-edit"></i> <% end %>
                                   </p>
@@ -46,7 +51,12 @@
                                   <p> メモ: <%= completion.memo %></p>
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                                  <p>作業時間: <span class="working_time_count"><%= ((completion.ending_time - completion.start_time)/60).to_i %></span>分
+                                   <% if (completion.ending_time - completion.start_time)/60 < 0 %>
+                                      <% working_time = ((completion.ending_time - completion.start_time)/60) + 1440 %>
+                                  <% else %>
+                                      <% working_time = ((completion.ending_time - completion.start_time)/60) %>
+                                  <% end %>
+                                  <p>作業時間: <span class="working_time_count"><%= working_time.to_i %></span>分
                                   <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                                   <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i class="fas fa-edit"></i> <% end %>
                                  </p>
@@ -59,5 +69,4 @@
                     <%= paginate @completions %>
                   </div>
               </div>
-    </div>
 </div>
