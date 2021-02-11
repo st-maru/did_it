@@ -4,6 +4,9 @@
                   <div class="completion-title">
                     <%= @task.name %>
                   </div>
+                  <div id="working_time">
+                    作業時間：
+                  </div>
                    <div class="completion-memo">
                      <%= @task.goal %>
                    </div>
@@ -29,7 +32,7 @@
                                   <p> メモ: <%= completion.memo %></p>
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                  <p>作業時間: <span class="working_time_count"><%= ((completion.ending_time - completion.start_time)/60).to_i %></span>分
                                   <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                                   <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i class="fas fa-edit"></i> <% end %>
                                   </p>
@@ -43,7 +46,7 @@
                                   <p> メモ: <%= completion.memo %></p>
                                   <p>開始時間: <%= completion.start_time.strftime('%H:%M') %></p>
                                   <p>終了時間: <%= completion.ending_time.strftime('%H:%M') %></p>
-                                  <p>作業時間: <%= ((completion.ending_time - completion.start_time)/60).to_i %>分
+                                  <p>作業時間: <span class="working_time_count"><%= ((completion.ending_time - completion.start_time)/60).to_i %></span>分
                                   <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                                   <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i class="fas fa-edit"></i> <% end %>
                                  </p>
