@@ -2,7 +2,7 @@
     <div class="account-edit-wrapper">
       <div class="account-edit-box">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"user-edit-form", html: { method: :put }) do |f| %>
-               <div class="sign-up-title">ユーザー編集</div>
+               　<div class="sign-up-title">ユーザー編集</div>
                   <%= render "devise/shared/error_messages", resource: resource %>
 
                  <div class="user-image"><% if @user.image? %>                                                              
