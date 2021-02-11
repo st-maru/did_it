@@ -60,3 +60,7 @@ gem 'pry-rails'
 gem 'kaminari'
 
 gem 'font-awesome-sass'
+
+gem 'carrierwave'
+
+gem 'rmagick'

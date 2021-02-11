@@ -1,9 +1,23 @@
 <div class="container-field">
     <div class="mypage-wrapper">
-        <div class="main-box">
-          <div class="main-header">
-              <div class="main-title">
+        <div class="user-box">
+          <div class="user-header">
+              <div class="user-title">
                   <%= @user.name + "のユーザー情報" %>
+                  <%= link_to edit_user_registration_path, class:"user-edit" do %><i class="fas fa-edit"></i> <% end %>
+              </div>
+              <div class="user-image">
+              <p><% if @user.image? %>                                                              
+                    <%= image_tag @user.image.url %>
+                 <% else %>
+                 <i class="fas fa-user-circle sample-user-icon"></i>
+                 <% end %></p>
+              </div>
+              <div class="user-profile">
+              <p>-名前-</p>
+              <%= @user.name %>
+              <p class="profile">-プロフィール-</p>
+              <%= @user.profile %>
               </div>
           </div>
         </div>
