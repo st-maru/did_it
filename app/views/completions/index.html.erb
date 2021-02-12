@@ -4,12 +4,12 @@
                   <div class="completion-title">
                     <%= @task.name %>
                   </div>
-                  <div id="working_time">
-                    作業時間：
-                  </div>
                    <div class="completion-memo">
                      <%= @task.goal %>
                    </div>
+                  <div id="working_time">
+                    作業時間：
+                  </div>
                   <div class="task-user"> 
                   <p>作成者：<%= link_to @task.user.name, user_path(@task.user.id), class:"user-link" %>
                   <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
@@ -20,6 +20,8 @@
                      <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
                    </div>
                     <div class="contents-list">
+                    <%= pie_chart @tag_count %>
+                    <%= pie_chart @thank_count %>
                       <% if @completions.present? %>
                          <% working_day = "" %>
                          <% @completions.each do |completion| %>
