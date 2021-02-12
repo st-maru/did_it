@@ -9,6 +9,15 @@
   padding-bottom: 10vh;
 }
 
+.completion-charts {
+  padding: 0.5em 1.5em;
+  margin: 2em 0;
+  background: #FFF;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10vh;
+}
+
 .completion-title {
   text-align: center;
   font-size: 2em;
