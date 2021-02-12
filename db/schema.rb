@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_021948) do
+ActiveRecord::Schema.define(version: 2021_02_12_103959) do
 
   create_table "completion_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "completion_id"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_021948) do
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -88,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_021948) do
   add_foreign_key "completion_thank_relations", "thanks"
   add_foreign_key "completions", "tasks"
   add_foreign_key "completions", "users"
+  add_foreign_key "tags", "users"
   add_foreign_key "tasks", "users"
   add_foreign_key "thanks", "users"
 end

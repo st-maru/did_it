@@ -64,3 +64,5 @@ gem 'font-awesome-sass'
 gem 'carrierwave'
 
 gem 'rmagick'
+
+gem 'chartkick'
