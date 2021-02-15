@@ -1,0 +1,23 @@
+<div class="container-field">
+    <div class="mypage-wrapper">
+           <div class="task-box">
+              <div class="task-header">
+                  <div class="task-title">
+                    みんなのタスク
+                  </div>
+                  <div class="task-lists">
+                    <% if @task.present? %>
+                        <% @task.each do |task| %>
+                          <div class="task">
+                             <%= link_to task.name, task_completions_path(task.id), class:"btn btn-info list-btn" %>
+                          </div>
+                        <% end %>
+                    <% else %>
+                        <div class="list-none">タスクがありません</div>
+                    <% end %>
+                    <%= paginate @task %>
+                  </div>
+              </div>
+           </div>
+    </div>
+</div>
