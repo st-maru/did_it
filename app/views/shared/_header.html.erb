@@ -9,7 +9,10 @@
     <div class="header-tasks">
       <%= link_to "タスク一覧", tasks_path %>
     </div>
-      <div class="header-user-information">
+    <div class="header-task-lists">
+      <%= link_to "みんなのタスク", lists_path %>
+    </div>
+    <div class="header-user-information">
      <%= link_to "ユーザー情報", user_path(current_user.id) %>
     </div>
     <div class="header-sign-out">

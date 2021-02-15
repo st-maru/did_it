@@ -12,7 +12,15 @@
             </div>
             <div class="task-user"> 
                 <p>
-                    作成者：<%= link_to @task.user.name, user_path(@task.user.id), class:"user-link" %>
+                    作成者：<% if @task.user.image? %>                                                              
+                                <%= link_to user_path(@task.user.id), class:"user-link" do %>
+                                    <%= image_tag @task.user.image.thumb50.url, class:"icon" %>
+                                    <%= @task.user.name %>
+                                <% end %>
+                           <% else %>
+                                <i class="fas fa-user-circle completion-user-icon"></i>
+                                <%= @task.user.name %>
+                           <% end %>
                     <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
                     <%= link_to task_path(@task.id), method: :delete, class:"task-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
                 </p>

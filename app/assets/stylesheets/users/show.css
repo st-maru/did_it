@@ -44,3 +44,7 @@
 .profile {
   margin-top: 35px;
 }
+
+.profile-icon {
+  border-radius: 50%;
+}

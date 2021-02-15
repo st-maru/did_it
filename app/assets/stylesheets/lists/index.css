@@ -1,0 +1,72 @@
+.list-box {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+
+.list-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list-title {
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+}
+
+.task-link {
+  width: 750px;
+  min-height: 110px;
+  padding: 25px;
+  margin-bottom: 50px;
+  background-color: #FFFFFE;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+  color: #333333;
+  text-decoration: none;
+}
+
+.task-link:hover {
+  color: #333333;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.task-user-name {
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.task-name {
+  margin-left: 60px;
+  font-size: 1.5em;
+  max-width: 150px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.task-goal {
+  margin-left: 90px;
+  max-width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+

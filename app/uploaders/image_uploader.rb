@@ -63,8 +63,8 @@ class ImageUploader < CarrierWave::Uploader::Base
       process :resize_to_limit => [100, 100]
     end
   
-    version :thumb30 do
-      process :resize_to_limit => [30, 30]
+    version :thumb50 do
+      process :resize_to_limit => [50, 50]
     end
   
     # jpg,jpeg,gif,pngしか受け付けない
