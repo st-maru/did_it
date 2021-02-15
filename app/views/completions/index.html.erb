@@ -14,7 +14,7 @@
                 <p>
                     作成者：<% if @task.user.image? %>                                                              
                                 <%= link_to user_path(@task.user.id), class:"user-link" do %>
-                                    <%= image_tag @task.user.image.thumb50.url %>
+                                    <%= image_tag @task.user.image.thumb50.url, class:"icon" %>
                                     <%= @task.user.name %>
                                 <% end %>
                            <% else %>

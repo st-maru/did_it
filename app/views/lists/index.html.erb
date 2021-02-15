@@ -1,16 +1,27 @@
 <div class="container-field">
     <div class="mypage-wrapper">
-           <div class="task-box">
-              <div class="task-header">
-                  <div class="task-title">
+           <div class="list-box">
+              <div class="list-header">
+                  <div class="list-title">
                     みんなのタスク
                   </div>
                   <div class="task-lists">
                     <% if @task.present? %>
                         <% @task.each do |task| %>
-                          <div class="task">
-                             <%= link_to task.name, task_completions_path(task.id), class:"btn btn-info list-btn" %>
-                          </div>
+                            <%= link_to task_completions_path(task.id), class: 'task-link' do %>
+                                <div class="task-user-icon">
+                                    <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                                </div>
+                                <div class="task-user-name">
+                                    <%= task.user.name %>
+                                </div>
+                                <div class="task-name">
+                                    <%= task.name %>
+                                </div>
+                                <div class="task-goal">
+                                    <%= task.goal %>
+                                </div>
+                            <% end %>
                         <% end %>
                     <% else %>
                         <div class="list-none">タスクがありません</div>
