@@ -30,6 +30,6 @@ header a:hover {
   padding-right: 50px;
 }
 
-.header-sign-in, .header-tasks, .header-user-information {
+.header-sign-in, .header-tasks, .header-task-lists, .header-user-information {
   margin-right: 30px;
 }
