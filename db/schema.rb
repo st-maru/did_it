@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_025724) do
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "completion_id"
+    t.integer "task_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

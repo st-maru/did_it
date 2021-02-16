@@ -4,6 +4,15 @@
             <div class="completion-title">
                 <%= @task.name %>
             </div>
+              <% if user_signed_in? %>
+                    <% if @task.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+                        <p><span>お気に入り解除: </span><%=link_to @task.favorites.count, tweet_favorites_path(@task.id), method: :delete %></p>
+                    <% else %>
+                        <p><span>お気に入り登録: </span><%=link_to @task.favorites.count, tweet_favorites_path(@task.id), method: :post %></p>
+                    <% end %>
+              <% else %>
+                    <p><span>お気に入り数: </span><%= @task.favorites.count %></p>
+              <% end %>
             <div class="completion-memo">
                 <%= @task.goal %>
             </div>

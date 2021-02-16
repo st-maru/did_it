@@ -5,5 +5,4 @@ class Completion < ApplicationRecord
   has_many :thanks, through: :completion_thank_relations, dependent: :destroy
   has_many :completion_tag_relations, dependent: :destroy
   has_many :tags, through: :completion_tag_relations, dependent: :destroy
-  has_many :favorites
 end
