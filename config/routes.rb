@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :lists, only: :index
   resources :tasks, only: [:index, :new, :create, :edit, :update, :destroy] do
+    resource :favorites, only: [:create, :destroy]
     resources :completions, only: [:index, :new, :create, :edit, :update, :destroy] do
-      resource :favorites, only: [:create, :destroy]
     end
   end
 end
