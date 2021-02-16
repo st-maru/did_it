@@ -10,7 +10,7 @@ function workingTimeCount() {
 
   const workingTime = document.getElementById("working_time")
 
-  workingTime.innerHTML = "作業時間：計" + summary + "分"
+  workingTime.innerHTML = "作業時間：" + summary + "分"
 }
 
 window.addEventListener('turbolinks:load', workingTimeCount)

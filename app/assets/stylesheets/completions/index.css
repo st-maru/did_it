@@ -33,6 +33,28 @@
   margin-bottom: 20px;
 }
 
+.favorite {
+  margin-bottom: 10px;
+}
+
+.favorited-btn {
+  color: red;
+}
+
+.favorite-btn {
+  color: #808080; 
+}
+
+.favorited-btn:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.favorite-btn:hover {
+  color: #808080; 
+  text-decoration: none;
+}
+
 .task-user {
   margin-bottom: 1.5em;
 }

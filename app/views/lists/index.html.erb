@@ -21,6 +21,15 @@
                                 <div class="task-goal">
                                     <%= task.goal %>
                                 </div>
+                                <div class="favorite list-favorite">
+                                    <% if task.favorites.count > 0 %>
+                                        <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
+                                        <%= task.favorites.count %></p>
+                                    <% else %>
+                                        <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
+                                        <%= task.favorites.count %></p>
+                                    <% end %>
+                                </div>
                             <% end %>
                         <% end %>
                     <% else %>
