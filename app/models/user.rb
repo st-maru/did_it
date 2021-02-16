@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :completions, dependent: :destroy
   has_many :thanks, dependent: :destroy
   has_many :tags, dependent: :destroy
+  has_many :favorites
 end
