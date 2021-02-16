@@ -10,7 +10,11 @@
                         <% @task.each do |task| %>
                             <%= link_to task_completions_path(task.id), class: 'task-link' do %>
                                 <div class="task-user-icon">
-                                    <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                                    <% if task.user.image? %>
+                                        <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                                    <% else %>
+                                        <i class="fas fa-user-circle sample-icon"></i>
+                                    <% end %>
                                 </div>
                                 <div class="task-user-name">
                                     <%= task.user.name %>
