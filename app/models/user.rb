@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :thanks, dependent: :destroy
   has_many :tags, dependent: :destroy
   has_many :favorites
+  has_many :favorite_tasks, through: :favorites, source: :task
 end
