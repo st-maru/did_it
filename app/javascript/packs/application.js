@@ -13,6 +13,7 @@ require("channels")
 require("../working_time_count")
 require("chartkick")
 require("chart.js")
+require('jquery')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

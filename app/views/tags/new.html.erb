@@ -5,7 +5,7 @@
 
     <%= form_with model: [@task, @category], local: true do |f|%>
 
-     <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
     <div class="field">
       <%= f.label :name, "カテゴリー名" %><br />

@@ -13,10 +13,10 @@
       <%= link_to "みんなのタスク", lists_path %>
     </div>
     <div class="header-user-information">
-     <%= link_to "ユーザー情報", user_path(current_user.id) %>
+      <%= link_to "ユーザー情報", user_path(current_user.id) %>
     </div>
     <div class="header-sign-out">
-     <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
     </div>
     <% else %>
     <div class="header-sign-in">
