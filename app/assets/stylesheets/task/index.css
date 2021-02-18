@@ -38,11 +38,16 @@
 
 .list-btn, .add-btn {
   width: 500px;
+  margin-bottom: 50px;
 }
 
 .list-none {
   text-align: center;
   margin: 20px 0;
   font-size: 1.5em;
+}
+
+.sample-icon {
+  font-size: 3em;
 }
 

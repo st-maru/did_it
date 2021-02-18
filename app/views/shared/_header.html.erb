@@ -7,16 +7,16 @@
   <div class="header-right">
     <% if user_signed_in? %>
     <div class="header-tasks">
-      <%= link_to "タスク一覧", tasks_path %>
+      <%= link_to "自分のタスク", tasks_path %>
     </div>
     <div class="header-task-lists">
       <%= link_to "みんなのタスク", lists_path %>
     </div>
     <div class="header-user-information">
-     <%= link_to "ユーザー情報", user_path(current_user.id) %>
+      <%= link_to "ユーザー情報", user_path(current_user.id) %>
     </div>
     <div class="header-sign-out">
-     <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :DELETE %>
     </div>
     <% else %>
     <div class="header-sign-in">

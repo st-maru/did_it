@@ -29,6 +29,7 @@
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
   color: #333333;
   text-decoration: none;
+  position: relative;
 }
 
 .task-link:hover {
@@ -58,10 +59,16 @@
 
 .task-goal {
   margin-left: 90px;
-  max-width: 200px;
+  max-width: 250px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.list-favorite {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
 }
 
 .icon {

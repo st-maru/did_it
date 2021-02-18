@@ -1,25 +1,65 @@
 <div class="container-field">
     <div class="mypage-wrapper">
         <div class="user-box">
-          <div class="user-header">
-              <div class="user-title">
-                  <%= @user.name + "のユーザー情報" %>
-                  <%= link_to edit_user_registration_path, class:"user-edit" do %><i class="fas fa-edit"></i> <% end %>
-              </div>
-              <div class="user-image">
-              <p><% if @user.image? %>                                                              
-                    <%= image_tag @user.image.url, class:"profile-icon" %>
-                 <% else %>
-                 <i class="fas fa-user-circle sample-user-icon"></i>
-                 <% end %></p>
-              </div>
-              <div class="user-profile">
-              <p>-名前-</p>
-              <%= @user.name %>
-              <p class="profile">-プロフィール-</p>
-              <%= @user.profile %>
-              </div>
-          </div>
+            <div class="user-header">
+                <div class="user-title">
+                    <%= @user.name + "のユーザー情報" %>
+                    <%= link_to edit_user_registration_path, class:"user-edit" do %><i class="fas fa-edit"></i>
+                    <% end %>
+                </div>
+                <div class="user-image">
+                    <p><% if @user.image? %>
+                        <%= image_tag @user.image.url, class:"profile-icon" %>
+                        <% else %>
+                        <i class="fas fa-user-circle sample-user-icon"></i>
+                        <% end %></p>
+                </div>
+                <div class="user-profile">
+                    <p>-名前-</p>
+                    <%= @user.name %>
+                    <p class="profile">-プロフィール-</p>
+                    <%= @user.profile %>
+                </div>
+                <div class="favorite-border">
+                    <%= @user.name %>のお気に入りタスク
+                </div>
+                <div class="user-favorite">
+                    <% if @favorite_tasks.present? %>
+                    <% @favorite_tasks.each do |task| %>
+                    <%= link_to task_completions_path(task.id), class: 'task-link' do %>
+                    <div class="task-user-icon">
+                        <% if task.user.image? %>
+                        <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                        <% else %>
+                        <i class="fas fa-user-circle sample-icon"></i>
+                        <% end %>
+                    </div>
+                    <div class="task-user-name">
+                        <%= task.user.name %>
+                    </div>
+                    <div class="task-name">
+                        <%= task.name %>
+                    </div>
+                    <div class="task-goal">
+                        <%= task.goal %>
+                    </div>
+                    <div class="favorite list-favorite">
+                        <% if task.favorites.count > 0 %>
+                        <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
+                            <%= task.favorites.count %></p>
+                        <% else %>
+                        <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
+                            <%= task.favorites.count %></p>
+                        <% end %>
+                    </div>
+                    <% end %>
+                    <% end %>
+                    <% else %>
+                    <div class="list-none">タスクがありません</div>
+                    <% end %>
+                    <%= paginate @favorite_tasks %>
+                </div>
+            </div>
         </div>
     </div>
 </div>
