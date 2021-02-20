@@ -1,5 +1,6 @@
 class CompletionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :move_to_index, except: :index
 
   def index
     @task = Task.find(params[:task_id])
@@ -75,6 +76,13 @@ class CompletionsController < ApplicationController
           @thank_count[thank.human] = (@thank_count[thank.human]).to_i + 1
         end
       end
+    end
+  end
+
+  def move_to_index
+    completion = Completion.find(params[:id])
+    unless current_user.id == completion.user.id
+      redirect_to action: :index
     end
   end
 

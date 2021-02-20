@@ -32,9 +32,11 @@
                     <% end %>
                 </p>
             </div>
-            <div class="content-add">
-                <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
-            </div>
+            <% if @task.user.id == current_user.id %>
+                <div class="content-add">
+                    <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
+                </div>
+            <% end %>
             <div class="contents-list">
                 <% if @completions.present? %>
                 <% working_day = "" %>
