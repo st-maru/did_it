@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+  before_action :move_to_index, except: [:index, :new]
+
   def index
     @user = User.find(current_user.id)
     @task = @user.tasks.order(id: "DESC").page(params[:page]).per(10)
@@ -39,5 +42,12 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:name, :goal).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    task = Task.find(params[:id])
+    unless current_user.id == task.user.id
+      redirect_to task_completions_path(task.id)
+    end
   end
 end

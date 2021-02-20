@@ -26,14 +26,17 @@
                     <%= @task.user.name %>
                     <% end %>
                     <% end %>
-                    <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
-                    <%= link_to task_path(@task.id), method: :delete, class:"task-delete" do %> <i
-                        class="far fa-trash-alt"></i> <% end %>
+                    <% if @task.user.id == current_user.id %>
+                        <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
+                        <%= link_to task_path(@task.id), method: :delete, class:"task-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
+                    <% end %>
                 </p>
             </div>
-            <div class="content-add">
-                <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
-            </div>
+            <% if @task.user.id == current_user.id %>
+                <div class="content-add">
+                    <%= link_to "dekita!を追加する", new_task_completion_path(@task.id), class: "btn btn-success add-btn" %>
+                </div>
+            <% end %>
             <div class="contents-list">
                 <% if @completions.present? %>
                 <% working_day = "" %>
@@ -55,10 +58,12 @@
                     <% working_time = ((completion.ending_time - completion.start_time)/60) %>
                     <% end %>
                     <p>作業時間: <span class="working_time_count"><%= working_time.to_i %></span>分
-                        <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %>
-                        <i class="far fa-trash-alt"></i> <% end %>
-                        <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i
-                            class="fas fa-edit"></i> <% end %>
+                        <% if completion.user.id == current_user.id %>
+                            <%= link_to task_completion_path(@task.id, completion.id), method: :delete, class:"completion-delete" do %>
+                            <i class="far fa-trash-alt"></i> <% end %>
+                            <%= link_to edit_task_completion_path(@task.id, completion.id), class:"completion-edit" do %> <i
+                                class="fas fa-edit"></i> <% end %>
+                        <% end %>
                     </p>
                 </div>
                 <% working_day = completion.working_day %>
