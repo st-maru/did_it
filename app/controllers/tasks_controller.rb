@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :new]
 
   def index
     @user = User.find(current_user.id)
