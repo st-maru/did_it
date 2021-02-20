@@ -26,9 +26,10 @@
                     <%= @task.user.name %>
                     <% end %>
                     <% end %>
-                    <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
-                    <%= link_to task_path(@task.id), method: :delete, class:"task-delete" do %> <i
-                        class="far fa-trash-alt"></i> <% end %>
+                    <% if @task.user.id == current_user.id %>
+                        <%= link_to edit_task_path(@task.id), class:"task-edit" do %> <i class="fas fa-edit"></i> <% end %>
+                        <%= link_to task_path(@task.id), method: :delete, class:"task-delete" do %> <i class="far fa-trash-alt"></i> <% end %>
+                    <% end %>
                 </p>
             </div>
             <div class="content-add">
