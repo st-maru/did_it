@@ -24,8 +24,9 @@
         <%= f.submit "ログイン", class:"btn btn-primary" %>
       </div>
       <% end %>
-
-      <%= render "devise/shared/links" %>
+      <div class="guest-login">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-info", method: :post %>
+      </div>
     </div>
   </div>
 </div>

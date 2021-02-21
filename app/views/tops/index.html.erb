@@ -9,6 +9,9 @@
       <div class="main-sign-up">
         <%= link_to 'dekita!を記録する(新規登録)', new_user_registration_path, class: "btn btn-primary" %>
       </div>
+      <div class="guest-login">
+        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-info", method: :post %>
+      </div>
     </div>
   </div>
 </div>

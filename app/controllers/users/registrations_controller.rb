@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :check_guest, only: :destroy
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -62,6 +63,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_update_path_for(_resource)
     user_path(current_user.id)
+  end
+
+  def check_guest
+    if resource.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
+    end
   end
 
   protected

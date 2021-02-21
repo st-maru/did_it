@@ -12,7 +12,7 @@ dekita!投稿の際に支えになった人を意識することで、
 # 開発環境
 ・Ruby 2.6.5  
 ・Ruby on Rails 6.0.3.4  
-・MySQL
+・MySQL  
 ・Rubocop
 
 # 機能一覧
