@@ -4,7 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @task = @user.tasks.order(id: "DESC").page(params[:page]).per(10)
+    @task = @user.tasks.order(id: 'DESC').page(params[:page]).per(10)
   end
 
   def new
@@ -40,14 +40,13 @@ class TasksController < ApplicationController
   end
 
   private
+
   def task_params
     params.require(:task).permit(:name, :goal).merge(user_id: current_user.id)
   end
 
   def move_to_index
     task = Task.find(params[:id])
-    unless current_user.id == task.user.id
-      redirect_to task_completions_path(task.id)
-    end
+    redirect_to task_completions_path(task.id) unless current_user.id == task.user.id
   end
 end
