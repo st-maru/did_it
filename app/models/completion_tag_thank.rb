@@ -1,5 +1,4 @@
 class CompletionTagThank
-
   include ActiveModel::Model
   attr_accessor :summary, :memo, :working_day, :start_time, :ending_time, :user_id, :task_id, :name, :human, :thank_id
 
@@ -12,7 +11,6 @@ class CompletionTagThank
     validates :ending_time
   end
 
-
   delegate :persisted?, to: :completion
 
   def initialize(attributes = nil, completion: Completion.new)
@@ -23,10 +21,12 @@ class CompletionTagThank
 
   def save
     return if invalid?
+
     ActiveRecord::Base.transaction do
       tags = split_name.map { |name| Tag.find_or_create_by!(name: name, user_id: user_id) }
       thanks = split_human.map { |human| Thank.find_or_create_by!(human: human, user_id: user_id) }
-      completion.update!(summary: summary, memo: memo, working_day: working_day, start_time: start_time, ending_time: ending_time, user_id: user_id, task_id: task_id, tags: tags, thanks: thanks)
+      completion.update!(summary: summary, memo: memo, working_day: working_day, start_time: start_time,
+                         ending_time: ending_time, user_id: user_id, task_id: task_id, tags: tags, thanks: thanks)
     end
   rescue ActiveRecord::RecordInvalid
     false
@@ -59,5 +59,4 @@ class CompletionTagThank
   def split_human
     human.split(',')
   end
-  
 end
