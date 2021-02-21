@@ -13,7 +13,7 @@ https://did-it2021.herokuapp.com/
 ・Ruby 2.6.5  
 ・Ruby on Rails 6.0.3.4  
 ・MySQL  
-・Rubocop
+・Rubocop  
 ・AWS(S3)
 
 # 機能一覧
