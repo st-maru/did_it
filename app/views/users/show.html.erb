@@ -5,8 +5,8 @@
                 <div class="user-title">
                     <%= @user.name + "のユーザー情報" %>
                     <% if @user.id == current_user.id %>
-                        <%= link_to edit_user_registration_path, class:"user-edit" do %><i class="fas fa-edit"></i>
-                        <% end %>
+                    <%= link_to edit_user_registration_path, class:"user-edit" do %><i class="fas fa-edit"></i>
+                    <% end %>
                     <% end %>
                 </div>
                 <div class="user-image">
@@ -22,46 +22,96 @@
                     <p class="profile">-プロフィール-</p>
                     <%= @user.profile %>
                 </div>
-                <div class="favorite-border">
-                    <%= @user.name %>のお気に入りタスク
+                <ul class="nav nav-tabs tasks-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="item1-tab" data-toggle="tab" href="#item1" role="tab"
+                            aria-controls="item1" aria-selected="true"><%= @user.name + "のタスク" %></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="item2-tab" data-toggle="tab" href="#item2" role="tab"
+                            aria-controls="item2" aria-selected="false">テスターのお気に入りタスク</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="item1" role="tabpanel" aria-labelledby="item1-tab">
+                        <div class="user-task-lists">
+                            <% if @user_tasks.present? %>
+                            <% @user_tasks.each do |task| %>
+                            <%= link_to task_completions_path(task.id), class: 'task-link' do %>
+                            <div class="task-user-icon">
+                                <% if task.user.image? %>
+                                <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                                <% else %>
+                                <i class="fas fa-user-circle sample-icon"></i>
+                                <% end %>
+                            </div>
+                            <div class="task-user-name">
+                                <%= task.user.name %>
+                            </div>
+                            <div class="task-name">
+                                <%= task.name %>
+                            </div>
+                            <div class="task-goal">
+                                <%= task.goal %>
+                            </div>
+                            <div class="favorite list-favorite">
+                                <% if task.favorites.count > 0 %>
+                                <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
+                                    <%= task.favorites.count %></p>
+                                <% else %>
+                                <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
+                                    <%= task.favorites.count %></p>
+                                <% end %>
+                            </div>
+                            <% end %>
+                            <% end %>
+                            <% else %>
+                            <div class="list-none">タスクがありません</div>
+                            <% end %>
+                            <%= paginate @user_tasks %>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="item2" role="tabpanel" aria-labelledby="item2-tab">
+                        <div class="user-favorite">
+                            <% if @favorite_tasks.present? %>
+                            <% @favorite_tasks.each do |task| %>
+                            <%= link_to task_completions_path(task.id), class: 'task-link' do %>
+                            <div class="task-user-icon">
+                                <% if task.user.image? %>
+                                <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                                <% else %>
+                                <i class="fas fa-user-circle sample-icon"></i>
+                                <% end %>
+                            </div>
+                            <div class="task-user-name">
+                                <%= task.user.name %>
+                            </div>
+                            <div class="task-name">
+                                <%= task.name %>
+                            </div>
+                            <div class="task-goal">
+                                <%= task.goal %>
+                            </div>
+                            <div class="favorite list-favorite">
+                                <% if task.favorites.count > 0 %>
+                                <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
+                                    <%= task.favorites.count %></p>
+                                <% else %>
+                                <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
+                                    <%= task.favorites.count %></p>
+                                <% end %>
+                            </div>
+                            <% end %>
+                            <% end %>
+                            <% else %>
+                            <div class="list-none">タスクがありません</div>
+                            <% end %>
+                            <%= paginate @favorite_tasks %>
+                        </div>
+                    </div>
                 </div>
-                <div class="user-favorite">
-                    <% if @favorite_tasks.present? %>
-                    <% @favorite_tasks.each do |task| %>
-                    <%= link_to task_completions_path(task.id), class: 'task-link' do %>
-                    <div class="task-user-icon">
-                        <% if task.user.image? %>
-                        <%= image_tag task.user.image.thumb50.url, class:"icon" %>
-                        <% else %>
-                        <i class="fas fa-user-circle sample-icon"></i>
-                        <% end %>
-                    </div>
-                    <div class="task-user-name">
-                        <%= task.user.name %>
-                    </div>
-                    <div class="task-name">
-                        <%= task.name %>
-                    </div>
-                    <div class="task-goal">
-                        <%= task.goal %>
-                    </div>
-                    <div class="favorite list-favorite">
-                        <% if task.favorites.count > 0 %>
-                        <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
-                            <%= task.favorites.count %></p>
-                        <% else %>
-                        <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
-                            <%= task.favorites.count %></p>
-                        <% end %>
-                    </div>
-                    <% end %>
-                    <% end %>
-                    <% else %>
-                    <div class="list-none">タスクがありません</div>
-                    <% end %>
-                    <%= paginate @favorite_tasks %>
+                <div>
                 </div>
             </div>
         </div>
     </div>
-</div>

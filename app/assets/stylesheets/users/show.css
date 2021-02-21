@@ -57,3 +57,15 @@
   text-align: center;
   font-size: 2em;
 }
+
+.user-favorite {
+  margin-top: 30px;
+}
+
+.user-task-lists {
+  margin-top: 30px;
+}
+
+.tasks-tab {
+  margin-top: 100px;
+}
