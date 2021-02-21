@@ -14,6 +14,7 @@ https://did-it2021.herokuapp.com/
 ・Ruby on Rails 6.0.3.4  
 ・MySQL  
 ・Rubocop
+・AWS(S3)
 
 # 機能一覧
 ・ユーザー管理機能(devise)  
@@ -29,7 +30,7 @@ https://did-it2021.herokuapp.com/
 ・検索機能  
 ・レスポンシブルデザイン
 ・ユーザーフォロー機能  
-・AWS(EC2, S3)  
+・AWS(EC2)  
 ・コメント機能  
 ・テストコード(RSpec)  
 ・自動テスト、自動デプロイ
