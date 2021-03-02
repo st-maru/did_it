@@ -24,10 +24,10 @@ https://did-it2021.herokuapp.com/
 ・タグの使用頻度のグラフ表示機能(chartkick)  
 ・お気に入り機能(Ajax)  
 ・投稿一覧表示機能  
-・ページネーション機能(kaminari)  
+・ページネーション機能(kaminari)
+・検索機能(ransack)
 
-# 実装予定
-・検索機能  
+# 実装予定 
 ・レスポンシブルデザイン
 ・ユーザーフォロー機能  
 ・AWS(EC2)  
