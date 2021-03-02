@@ -6,46 +6,46 @@
                     みんなのタスク
                 </div>
                 <div class="search-box">
-                    <%= search_form_for @q, url: search_lists_path do |f| %>
-                        <%= f.search_field :name_cont %>
-                        <%= f.submit '検索' %>
-                    <% end %>
+                  <%= search_form_for @q, url: search_lists_path do |f| %>
+                      <%= f.search_field :name_cont %>
+                      <%= f.submit '検索' %>
+                  <% end %>
                 </div>
                 <div class="task-lists">
-                    <% if @task.present? %>
-                    <% @task.each do |task| %>
-                    <%= link_to task_completions_path(task.id), class: 'task-link' do %>
+                    <% if @results.present? %>
+                    <% @results.each do |result| %>
+                    <%= link_to task_completions_path(result.id), class: 'task-link' do %>
                     <div class="task-user-icon">
-                        <% if task.user.image? %>
-                        <%= image_tag task.user.image.thumb50.url, class:"icon" %>
+                        <% if result.user.image? %>
+                        <%= image_tag result.user.image.thumb50.url, class:"icon" %>
                         <% else %>
                         <i class="fas fa-user-circle sample-icon"></i>
                         <% end %>
                     </div>
                     <div class="task-user-name">
-                        <%= task.user.name %>
+                        <%= result.user.name %>
                     </div>
                     <div class="task-name">
-                        <%= task.name %>
+                        <%= result.name %>
                     </div>
                     <div class="task-goal">
-                        <%= task.goal %>
+                        <%= result.goal %>
                     </div>
                     <div class="favorite list-favorite">
-                        <% if task.favorites.count > 0 %>
+                        <% if result.favorites.count > 0 %>
                         <p class="favorited-btn"><span><i class="fas fa-heart"></i></span>
-                            <%= task.favorites.count %></p>
+                            <%= result.favorites.count %></p>
                         <% else %>
                         <p class="favorite-btn"><span><i class="fas fa-heart"></i></span>
-                            <%= task.favorites.count %></p>
+                            <%= result.favorites.count %></p>
                         <% end %>
                     </div>
                     <% end %>
                     <% end %>
                     <% else %>
-                    <div class="list-none">タスクがありません</div>
+                    <div class="list-none">該当のタスクがありません</div>
                     <% end %>
-                    <%= paginate @task %>
+                    <%= paginate @results %>
                 </div>
             </div>
         </div>
