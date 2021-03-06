@@ -1,12 +1,10 @@
+<%= render "shared/header"%>
 <div class="container-field">
     <div class="mypage-wrapper">
            <div class="task-box">
               <div class="task-header">
                   <div class="task-title">
                     <%= @user.name + "のタスク" %>
-                  </div>
-                  <div class="task-add">
-                    <%= link_to "タスクを追加する", new_task_path, class: "btn btn-success add-btn" %>
                   </div>
                   <div class="task-lists">
                       <% if @task.present? %>

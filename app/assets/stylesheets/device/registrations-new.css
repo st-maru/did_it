@@ -2,14 +2,7 @@
   background-color: #F8F1F1;
 }
 
-.post-wrapper {
-  background-color: #F8F1F1;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 100px;
-}
-
-.task-post-box {
+.sign-up-box {
   background-color: #fff;
   color: #333333;
   width: 70%;
@@ -19,24 +12,24 @@
   border-radius: 5px;
 }
 
-.new-task-title {
+.sign-up-title {
   color: #18405f;
   padding: 10px;
   border-bottom: solid 1px #18405f;
   font-weight: bold;
 }
 
-.task-post-logo {
+.popup-sign-up-logo {
   padding-right: 5px;
 }
 
-.task-post-form {
+.sign-up-form {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.task-post-btn {
+.field, .sign-up-btn {
   text-align: center;
   margin-top: 15px;
 }

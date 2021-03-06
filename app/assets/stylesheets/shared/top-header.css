@@ -1,0 +1,36 @@
+.top-header {
+  height: 70px;
+  width: 100%;
+  background-color: #13334c;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-left {
+  font-size: 40px;
+  margin: auto 0;
+  padding-left: 50px;
+}
+
+.header-right {
+  display: flex;
+  font-size: 20px;
+  margin: auto 0;
+  padding-right: 50px;
+}
+
+.header-sign-in, .header-tasks, .header-task-lists, .header-user-information {
+  margin-right: 30px;
+}

@@ -1,15 +1,10 @@
+<%= render "shared/header"%>
 <div class="container-field">
     <div class="mypage-wrapper">
         <div class="list-box">
             <div class="list-header">
                 <div class="list-title">
                     みんなのタスク
-                </div>
-                <div class="search-box">
-                    <%= search_form_for @q, url: search_lists_path do |f| %>
-                        <%= f.search_field :name_cont %>
-                        <%= f.submit '検索' %>
-                    <% end %>
                 </div>
                 <div class="task-lists">
                     <% if @task.present? %>

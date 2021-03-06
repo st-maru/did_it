@@ -2,55 +2,44 @@
   background-color: #F8F1F1;
 }
 
-.post-wrapper {
+.devise-wrapper {
   background-color: #F8F1F1;
   width: 100vw;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 200px;
 }
 
-.task-post-box {
+.sign-in-box {
   background-color: #fff;
   color: #333333;
   width: 70%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 5px;
+  margin: 0 auto;
 }
 
-.new-task-title {
+.sign-in-title {
   color: #18405f;
   padding: 10px;
   border-bottom: solid 1px #18405f;
   font-weight: bold;
 }
 
-.task-post-logo {
+.popup-sign-in-logo {
   padding-right: 5px;
 }
 
-.task-post-form {
+.sign-in-form {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-.task-post-btn {
+.sign-in-btn {
   text-align: center;
   margin-top: 15px;
 }
 
-.form {
-  width: 60%;
-}
-
-.label-name {
-  width: 60%;
-  margin: 0 auto;
-  text-align: left
-}
-
-.btn-primary {
-  width: 20%;
+.guest-login {
+  text-align: center;
+  margin-top: 20px;
 }
