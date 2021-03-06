@@ -1,8 +1,11 @@
+<%= render "shared/header"%>
 <div class="container-field">
-  <div class="account-edit-wrapper">
+    <div class="mypage-wrapper">
     <div class="account-edit-box">
+       <div class="sign-up-title">ユーザー編集</div>
+
+      <div class="user-edit-form">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class:"user-edit-form", html: { method: :put }) do |f| %>
-        <div class="sign-up-title">ユーザー編集</div>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="user-image"><% if @user.image? %>
@@ -19,12 +22,12 @@
 
       <div class="field">
         <%= f.label :name, "名前" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form-control" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form" %>
       </div>
 
       <div class="field">
         <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -33,26 +36,28 @@
 
       <div class="field">
         <%= f.label :profile, "プロフィール" %><br />
-        <%= f.text_area :profile, autofocus: true, class:"form-control" %>
+        <%= f.text_area :profile, autofocus: true, class:"form" %>
       </div>
 
       <div class="field">
         <%= f.label :password, "新しいパスワード" %> <br />
-        <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation, "新しいパスワード(確認用)" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form" %>
       </div>
 
-      <div class="actions account-edit-btn">
+      <div class="task-post-btn">
         <%= f.submit "更新する", class:"btn btn-success" %>
       </div>
       <% end %>
-      <div class="user-delete-btn">
+      <div class="task-post-btn">
         <%= button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger" %>
       </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>

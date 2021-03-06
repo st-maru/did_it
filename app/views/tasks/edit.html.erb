@@ -1,21 +1,27 @@
-<div class="container-field">
+<%= render "shared/header"%>
+<div class="post-wrapper">
+    <div class="container">
     <div class="mypage-wrapper">
          <div class="task-edit-box">
+         <div class="edit-task-title">タスクの変更</div>
+
+         <div class="task-post-form">
            <%= form_with model: @task, class:"task-form", local: true do |f|%>
-              <div class="edit-task-title">タスクの変更</div>
                 <%= render 'shared/error_messages', model: f.object %>
               <div class="field">
                 <%= f.label :name, "タスク名" %><br />
-                <%= f.text_field :name, class:"form-control" %>
+                <%= f.text_field :name, class:"form" %>
               </div>
                <div class="field">
                  <%= f.label :goal, "目標" %><br />
-                 <%= f.text_area :goal, class: "form_text form-control" %>
+                 <%= f.text_area :goal, class:"form" %>
                </div>
-               <div class="actions  form_btn">
+               <div class="task-post-btn">
                 <%= f.submit "変更する", class: "btn btn-primary"  %>
               </div>
             <% end %>
+            </div>
+         </div>
          </div>
     </div>
 </div>

@@ -1,37 +1,41 @@
-<div class="container-field">
-  <div class="sign-up-wrapper">
-    <div class="sign-up-box">
-      <div class="sign-up-title">新規登録</div>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render 'shared/error_messages', model: f.object %>
+<%= render "shared/top-header"%>
+<div class="mypage-wrapper">
+    <div class="container">
+        <div class="sign-up-box">
+            <div class="sign-up-title"><i class="fas fa-user-plus popup-sign-up-logo"></i>新規登録</div>
 
-      <div class="field">
-        <%= f.label :name, "名前" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-      </div>
+            <div class="sign-up-form">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= render 'shared/error_messages', model: f.object %>
 
-      <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+                <div class="field">
+                    <div class="label-name"><%= f.label :name, "名前" %></div>
+                    <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form" %>
+                </div>
 
-      <div class="field">
-        <%= f.label :password, "パスワード" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %>文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+                <div class="field">
+                    <div class="label-name"><%= f.label :email, "メールアドレス" %></div>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form" %>
+                </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+                <div class="field">
+                    <div class="label-name"><%= f.label :password, "パスワード" %>
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %>文字以上)</em>
+                    <% end %></div>
+                    <%= f.password_field :password, autocomplete: "new-password", class:"form" %>
+                </div>
 
-      <div class="actions  sign-up-btn">
-        <%= f.submit "新規登録", class:"btn btn-primary" %>
-      </div>
-      <% end %>
+                <div class="field">
+                    <div class="label-name"><%= f.label :password_confirmation, "パスワード(確認用)" %></div>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form" %>
+                </div>
+
+                <div class="actions  sign-up-btn">
+                    <%= f.submit "新規登録", class:"btn btn-primary" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

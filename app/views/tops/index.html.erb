@@ -1,17 +1,18 @@
-<div class="container-field">
-  <div class="main">
-    <div class="contents">
-      <div class="contents-text">
-        <h1>毎日のdekita!を記録しましょう</h1>
-        仕事の為？趣味の為？
-        あなたが今日dekita!(出来た!)ことを記録しましょう
-      </div>
-      <div class="main-sign-up">
-        <%= link_to 'dekita!を記録する(新規登録)', new_user_registration_path, class: "btn btn-primary" %>
-      </div>
-      <div class="guest-login">
-        <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-info", method: :post %>
-      </div>
+<%= render "shared/top-header"%>
+<div class="main-wrapper">
+    <div class="container">
+        <div class="top-page">
+            <div class="contents-text">
+                <h1>毎日のdekita!を記録しましょう</h1>
+                仕事の為？趣味の為？
+                あなたが今日dekita!(出来た!)ことを記録しましょう
+            </div>
+            <div class="main-sign-up">
+                <%= link_to 'dekita!を記録する(新規登録)', new_user_registration_path, class: "btn btn-primary top-btn" %>
+            </div>
+            <div class="guest-login">
+                <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-info", method: :post %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

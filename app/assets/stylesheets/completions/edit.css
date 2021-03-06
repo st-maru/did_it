@@ -1,23 +1,15 @@
-.completion-edit-box {
-  color: #333333;
-  background-color: #F8F1F1;
-  height: 100%;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
-}
 
-.completions-form {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.completion-edit-box {
+  background-color: #fff;
+  color: #333333;
+  width: 70%;
+  border-radius: 5px;
+  margin: 0 auto;
 }
 
 .edit-completion-title {
-  text-align: center;
-  font-size: 2em;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
+  color: #18405f;
+  padding: 10px;
+  border-bottom: solid 1px #18405f;
+  font-weight: bold;
 }

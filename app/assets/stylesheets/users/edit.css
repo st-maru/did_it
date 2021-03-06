@@ -1,29 +1,19 @@
-.account-edit-wrapper {
-  background-color: #F8F1F1;
-  color: #333333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .account-edit-box {
-  height: 100%;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  background-color: #fff;
+  color: #333333;
+  width: 60%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  margin-bottom: 50px;
 }
 
-.field {
-  margin-top: 20px;
-}
-
-.account-edit-btn {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.user-delete-btn {
-  text-align: center;
-  margin-top: 30px;
+.user-edit-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .user-image {
