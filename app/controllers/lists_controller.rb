@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q
 
   def index
     @task = Task.includes(:user).order(id: 'DESC').page(params[:page]).per(10)

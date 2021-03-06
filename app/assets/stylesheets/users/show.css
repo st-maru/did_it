@@ -68,3 +68,7 @@
 .tasks-tab {
   margin-top: 100px;
 }
+
+.tab-content {
+  min-height: 500px;
+}
