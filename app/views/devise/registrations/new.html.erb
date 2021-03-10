@@ -10,7 +10,7 @@
                 <%= render 'shared/error_messages', model: f.object %>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :name, "名前" %></div>
+                    <div class="label-name"><%= f.label :name, "名前(10文字以内)" %></div>
                     <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form" %>
                 </div>
 
@@ -20,10 +20,7 @@
                 </div>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :password, "パスワード" %>
-                    <% if @minimum_password_length %>
-                    <em>(<%= @minimum_password_length %>文字以上)</em>
-                    <% end %></div>
+                    <div class="label-name"><%= f.label :password, "パスワード(6文字以上)" %></div>
                     <%= f.password_field :password, autocomplete: "new-password", class:"form" %>
                 </div>
 
