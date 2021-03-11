@@ -34,4 +34,4 @@ https://did-it2021.herokuapp.com/
 ・AWS(EC2)  
 ・コメント機能  
 ・自動テスト、自動デプロイ  
-・統合テストコード(RSpec)  
+・結合テストコード(RSpec)  
