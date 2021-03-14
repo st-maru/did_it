@@ -48,7 +48,7 @@ RSpec.describe 'タスク編集', type: :system do
   end
   context 'タスク編集ができるとき' do
     it 'ログインしたユーザーは自分が作成したタスクの編集ができる' do
-      # ツイート1を投稿したユーザーでログインする
+      # タスク1を投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'メールアドレス', with: @task1.user.email
       fill_in 'パスワード', with: @task1.user.password
