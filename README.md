@@ -27,6 +27,7 @@ https://did-it2021.herokuapp.com/
 ・ページネーション機能(kaminari)  
 ・検索機能(ransack)  
 ・単体テストコード(RSpec)  
+・結合テストコード(RSpec)  
 
 # 実装予定 
 ・レスポンシブルデザイン  
@@ -34,4 +35,3 @@ https://did-it2021.herokuapp.com/
 ・AWS(EC2)  
 ・コメント機能  
 ・自動テスト、自動デプロイ  
-・結合テストコード(RSpec)  
