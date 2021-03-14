@@ -148,7 +148,7 @@ RSpec.describe 'タスク削除', type: :system do
       # タスク2ページに移動する
       click_on @task2.name
       # タスク2に「削除」ボタンが無いことを確認する
-      expect(page).to have_no_link href: edit_task_path(@task2)
+      expect(page).to have_no_link href: task_path(@task2)
     end
     it 'ログインしていないとタスクの削除ができない' do
       # トップページにいる
