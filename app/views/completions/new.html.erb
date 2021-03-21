@@ -11,37 +11,37 @@
           <%= render 'shared/error_messages', model: f.object %>
 
           <div class="field">
-            <div class="label-name"><%= f.label :summary, "取り組んだこと" %></div>
+            <div class="label-name"><%= f.label :summary, "取り組んだこと" %> <span class="badge badge-danger">必須</span></div>
             <%= f.text_field :summary, class:"form"  %>
           </div>
 
           <div class="field">
-            <div class="label-name"><%= f.label :name, "タグ" %></div>
+            <div class="label-name"><%= f.label :name, "タグ" %> <span class="badge badge-danger">必須</span></div>
             <%= f.text_field :name, class:"form" %>
           </div>
 
           <div class="field">
-            <div class="label-name"><%= f.label :human, "支えになった人" %></div>
+            <div class="label-name"><%= f.label :human, "支えになった人" %> <span class="badge badge-danger">必須</span></div>
             <%= f.text_field :human, class:"form" %>
           </div>
 
           <div class="field">
-            <div class="label-name"><%= f.label :memo, "メモ" %></div>
+            <div class="label-name"><%= f.label :memo, "メモ" %> <span class="badge badge-info">任意</span></div>
             <%= f.text_area :memo, class:"form" %>
           </div>
 
           <div class="field">
-            <div class="label-name"><%= f.label :working_day, "日付" %></div>
+            <div class="label-name"><%= f.label :working_day, "日付" %> <span class="badge badge-danger">必須</span></div>
             <%= f.date_field :working_day, class:"form" %>
           </div>
 
           <div class="field">
-            <div class="label-name"><%= f.label :start_time, "開始時刻", class:"start_time" %></div>
+            <div class="label-name"><%= f.label :start_time, "開始時刻", class:"start_time" %> <span class="badge badge-danger">必須</span></div>
             <%= f.time_field :start_time, class:"form" %>
 
           </div>
           <div class="field">
-            <div class="label-name"><%= f.label :ending_time, "終了時刻", class:"ending_time"%></div>
+            <div class="label-name"><%= f.label :ending_time, "終了時刻", class:"ending_time"%> <span class="badge badge-danger">必須</span></div>
             <%= f.time_field :ending_time, class:"form" %>
           </div>
 

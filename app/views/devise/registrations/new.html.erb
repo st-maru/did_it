@@ -10,22 +10,22 @@
                 <%= render 'shared/error_messages', model: f.object %>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :name, "名前(10文字以内)" %></div>
+                    <div class="label-name"><%= f.label :name, "名前(10文字以内)" %> <span class="badge badge-danger">必須</span></div>
                     <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"form" %>
                 </div>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :email, "メールアドレス" %></div>
+                    <div class="label-name"><%= f.label :email, "メールアドレス" %> <span class="badge badge-danger">必須</span></div>
                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form" %>
                 </div>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :password, "パスワード(6文字以上)" %></div>
+                    <div class="label-name"><%= f.label :password, "パスワード(6文字以上)" %> <span class="badge badge-danger">必須</span></div>
                     <%= f.password_field :password, autocomplete: "new-password", class:"form" %>
                 </div>
 
                 <div class="field">
-                    <div class="label-name"><%= f.label :password_confirmation, "パスワード(確認用)" %></div>
+                    <div class="label-name"><%= f.label :password_confirmation, "パスワード(確認用)" %> <span class="badge badge-danger">必須</span></div>
                     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form" %>
                 </div>
 
